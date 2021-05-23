@@ -348,6 +348,7 @@ function Payment() {
               id="card"
               value="card"
               type="radio"
+              checked
               onChange={(e) => changeMethod(e)}
             />
             <label for="card">Add a Debit/Credit Card</label>
