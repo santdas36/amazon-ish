@@ -32,7 +32,7 @@ function Payment() {
   const [cartTotal, setCartTotal] = useState(0);
   const [cartTotalWithTax, setCartTotalWithTax] = useState(0);
   const [deliveryCharges, setDeliveryCharges] = useState(false);
-  const [method, setMethod] = useState("");
+  const [method, setMethod] = useState("card");
 
   const changeMethod = (e) => {
     if (e.target.checked) {
