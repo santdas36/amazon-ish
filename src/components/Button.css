@@ -1,0 +1,63 @@
+.buttons {
+  display: flex;
+}
+.buttons button + button {
+  margin-left: 1rem;
+}
+.buttons button {
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons button:disabled {
+  opacity: 0.5;
+}
+.buttonSecondary {
+  background: #1a1a2c;
+  box-shadow: 0 0.5rem 1rem rgba(26, 26, 44, 0.25);
+}
+.buttonSecondary.outline {
+  color: rgba(26, 26, 44, 0.5);
+  background: none;
+  border: 2px solid rgba(26, 26, 44, 0.25);
+  box-shadow: 0 0.5rem 1rem rgba(26, 26, 44, 0.1);
+}
+.payment .buttonSecondary.outline {
+  color: rgba(99, 91, 255, 0.9);
+  background: none;
+  border: 2px solid rgba(99, 91, 255, 0.5);
+  box-shadow: 0 0.5rem 1rem rgba(99, 91, 255, 0.15);
+}
+.buttonRed {
+  background: #dc143c;
+  color: #fff;
+  border: none;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+}
+.buttonPrimary {
+  background: #f90;
+  box-shadow: 0 0.5rem 1rem rgba(255, 153, 0, 0.25);
+  padding: 0.5rem 1.5rem !important;
+}
+.buttonPrimary .MuiSvgIcon-root {
+  margin-right: 0.5rem;
+}
+.buttonPrimary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1rem 1rem -0.75rem rgba(255, 153, 0, 0.5);
+}
+button:active {
+  transform: scale(0.95) !important;
+  box-shadow: inset 0 0 0.5rem 0 rgba(0, 0, 0, 0.25) !important;
+}
+button:focus {
+  outline: none;
+}

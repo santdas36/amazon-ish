@@ -1,0 +1,69 @@
+.welcome {
+  padding: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.welcome__header {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+}
+.welcome__avatar {
+  height: 5rem;
+  border-radius: 99px;
+  margin-right: 1.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.15);
+}
+.welcome__header span {
+  margin-top: 4rem;
+}
+.welcome__inner {
+  display: flex;
+}
+.welcome .form__split {
+  display: flex;
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.05);
+}
+.welcome .form {
+  margin: 0;
+  box-shadow: none;
+  padding: 1rem;
+}
+.welcome .form + .form {
+  margin-left: 1rem;
+}
+.welcome .form h5 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 550px) {
+  .welcome {
+    padding: 1.5rem;
+  }
+  .welcome .form__split {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .welcome .form {
+    padding: 0;
+  }
+  .welcome .form + .form {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .welcome__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .welcome__avatar {
+    margin-right: 0;
+  }
+  .welcome__header span {
+    margin-top: 1.5rem;
+  }
+}

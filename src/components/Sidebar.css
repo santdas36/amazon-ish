@@ -1,0 +1,103 @@
+.sidebar {
+  min-width: 5rem;
+  width: clamp(80px, 10vw, 100px);
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 1rem rgba(26, 26, 44, 0.05);
+  background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebar__icon {
+  width: 2rem;
+  height: auto;
+}
+.sidebar__menu {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.sidebar__menuItem {
+  margin: 1rem auto;
+  position: relative;
+}
+.sidebar__menuIcon {
+  transform: scale(0.9);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.sidebar__menuItem.active .sidebar__menuIcon {
+  transform: scale(1);
+  fill: #1a1a2c !important;
+  stroke-width: none !important;
+  stroke: transparent !important;
+}
+.sidebar__menuItem:hover .sidebar__menuIcon {
+  transform: scale(1.05);
+}
+.sidebar__menuItem .sidebar__itemValue {
+  position: absolute;
+  padding: 4px 4px 5px 4px;
+  font-size: 10px;
+  text-align: center;
+  min-width: 18px;
+  height: 19px;
+  background: #f90;
+  color: #fff;
+  font-weight: 700;
+  left: calc(100% - 12px);
+  bottom: calc(100% - 12px);
+  margin: 0;
+  border-radius: 99px;
+}
+.sidebar__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 99px;
+  box-shadow: 0 0.5rem 0.5rem rgba(26, 26, 44, 0.05);
+  transition: all 0.2s;
+  object-fit: contain;
+}
+.sidebar__avatar:hover {
+  box-shadow: 0 0.5rem 0.75rem rgba(26, 26, 44, 0.15);
+  transition: scale(1.05);
+}
+.app__toolTip {
+  border-radius: 0.5rem !important;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+}
+.app__toolTipRed {
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(220, 20, 60, 0.15) !important;
+}
+
+@media (max-width: 550px) {
+  .sidebar {
+    width: 80px;
+    transform: translateX(-80px);
+    padding: 1.5rem 0;
+    transition: all 0.2s;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .sidebar__icon {
+    transform: translateX(80px);
+    transition: all 0.2s;
+    width: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 99px;
+    box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.1);
+    background: #fff;
+  }
+  .sidebar.active .sidebar__icon {
+    transform: translateX(0);
+    box-shadow: 0;
+  }
+}

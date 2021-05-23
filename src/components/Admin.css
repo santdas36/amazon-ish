@@ -1,0 +1,16 @@
+.admin input:valid + label {
+  left: 0.75rem;
+  top: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.25;
+}
+.admin input[type="checkbox"] + label {
+  padding: 0.5rem;
+  padding-left: 3rem;
+}
+.admin input[type="checkbox"]:valid + label {
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  opacity: 1;
+}

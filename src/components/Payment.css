@@ -1,0 +1,185 @@
+.payment {
+  padding: 5rem 3rem 3rem 3rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.payment > h4 {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+.payment__inner {
+  display: flex;
+}
+.payment__method {
+  flex: 0 0 calc(60% - 3rem);
+  margin-right: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.payment input[type="radio"] + label {
+  width: 100%;
+}
+.payment__summary {
+  flex: 0 0 40%;
+  max-width: 40%;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.05);
+  align-self: flex-start;
+  padding: 2rem;
+}
+.payment__summary .buttons {
+  margin-top: 2rem;
+  flex-direction: column;
+}
+.payment__summary .buttons button {
+  transform: none !important;
+}
+.payment__summary .buttons .buttonPrimary {
+  padding: 1rem 2rem !important;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.payment__summary button.outline {
+  margin-left: 0;
+  padding: 0.875rem 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.payment__summary button.outline img {
+  width: auto;
+  height: 1.5rem;
+  margin-right: unset;
+}
+.payment__summaryList {
+  margin-top: 1.5rem;
+}
+.payment__summaryList hr {
+  background: #acacad;
+}
+.payment__item {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: flex-end;
+}
+.payment__item span {
+  white-space: nowrap;
+}
+.payment__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.payment__quantity {
+  padding-left: 0.25rem;
+  opacity: 0.5;
+}
+.payment__price {
+  margin-left: auto;
+  padding-left: 1rem;
+}
+.payment__cardContainer {
+  max-width: 450px;
+}
+.payment__card {
+  height: 0;
+  padding-bottom: calc((100% - 2rem) * 0.6);
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  background: url(../assets/card.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 2rem 2rem -1rem rgba(255, 153, 0, 0.5);
+  margin-bottom: 3rem;
+}
+.payment__cardError {
+  padding: 0.5rem 1rem;
+  color: #dc143c;
+  background: rgba(255, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  width: calc(100% - 2rem);
+  margin: -1rem 1rem 3rem 1rem;
+}
+.payment__card > .StripeElement {
+  width: calc(100% - 4rem);
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.payment__cardName {
+  border: none;
+  background: transparent;
+  color: #fff;
+  line-height: 1;
+  font-size: 20px;
+  width: calc(100% - 4rem);
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-weight: 800;
+  font-family: "Nunito Sans", sans-serif;
+  text-shadow: 1px 1px 2px rgba(26, 26, 44, 0.25);
+}
+.payment__cardName::placeholder {
+  color: #fff;
+  opacity: 0.75;
+  text-shadow: none;
+}
+.StripeElement--webkit-autofill {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.payment__success .payment__card,
+.payment__success .payment__summary .buttons {
+  transition: filter 0.5s ease-in;
+  filter: hue-rotate(80deg);
+}
+.payment__shippingDetails {
+  padding: 2rem;
+  margin: 2rem 1rem;
+  width: calc(100% - 2rem);
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.05);
+  max-width: 418px;
+}
+
+@media (max-width: 550px) {
+  .payment {
+    padding: 3rem 1.5rem;
+  }
+  .payment__inner {
+    flex-flow: column nowrap;
+  }
+  .payment__method,
+  .payment__summary {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .payment__summary {
+    padding: 1.5rem;
+  }
+  .payment__card {
+    padding-bottom: calc(100% * 0.6);
+    width: 100%;
+    margin: 1rem 0 3rem 0;
+  }
+  .payment__shippingDetails {
+    margin: 2rem 0;
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .payment__card > .StripeElement {
+    width: calc(100% - 2rem);
+    bottom: 1rem;
+    left: 1rem;
+  }
+  .payment__cardName {
+    width: calc(100% - 2rem);
+    top: 1rem;
+    left: 1rem;
+  }
+}

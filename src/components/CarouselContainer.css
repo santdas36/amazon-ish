@@ -1,0 +1,19 @@
+.home__carousel {
+  margin: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(26, 26, 44, 0.2);
+  overflow: hidden;
+}
+.carousel .slide {
+  background: #fff !important;
+}
+.carousel .control-dots .dot {
+  box-shadow: 0 0.15rem 0.25rem rgba(26, 26, 44, 0.5);
+}
+
+@media (max-width: 550px) {
+  .home__carousel {
+    margin: 0;
+    border-radius: 0;
+  }
+}

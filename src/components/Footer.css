@@ -1,0 +1,121 @@
+.footer {
+  margin-top: auto;
+  background: #eaeaea;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+.footer__inner {
+  padding-left: clamp(80px, 10vw, 100px);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+.footer__disclaimer {
+  font-size: 16px;
+  background: #1a1a2c;
+  color: #fff;
+  padding: 1rem 3rem;
+}
+.footer__links {
+  display: flex;
+  padding: 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer__row {
+  margin-right: 3rem;
+  width: calc(25% - 3rem);
+}
+.footer__row ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__row h6 {
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+.footer__row ul li {
+  padding: 0;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  color: #1a1a2c;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.footer__row ul li:hover {
+  opacity: 1;
+}
+.footer__bottom {
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+  border-top: 1px solid rgba(26, 26, 44, 0.05);
+}
+.footer__logo {
+  height: 1.5rem;
+  width: auto;
+  margin-right: 1rem;
+}
+.footer__copy {
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0.75;
+}
+.footer__copy a {
+  color: #f90;
+  line-height: 1.2;
+  transition: all 0.2s;
+  border-bottom: 1px dotted #f90;
+}
+.footer__copy a:hover {
+  color: #dc143c;
+  border-bottom: 1px dotted #dc143c;
+}
+.footer__dropDownSpan {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.footer__currDropDown {
+  margin-right: 0;
+}
+.footer__dropDown .dropDown__menu {
+  top: auto;
+  bottom: calc(100% + 0.5rem);
+}
+
+@media (max-width: 550px) {
+  .footer__inner {
+    padding: 0;
+  }
+  .footer__links {
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    flex-flow: column nowrap;
+  }
+  .footer__row {
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+  .footer__disclaimer {
+    padding: 1.5rem;
+  }
+  .footer__copy {
+    padding: 0.5rem 0 1rem 0;
+  }
+  .footer__dropDownSpan {
+    margin: 0;
+  }
+  .footer__bottom {
+    padding: 1.5rem;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  .footer__langDropDown,
+  .footer__currDropDown {
+    margin: 0.5rem;
+  }
+}

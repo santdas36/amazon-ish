@@ -1,0 +1,50 @@
+.dropDown {
+  padding: 0.33rem 0.15rem 0.33rem 0.66rem;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.05);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.dropDown__icon {
+  opacity: 0.75;
+  transform: rotate(0) scale(0.8, 0.85);
+  transition: transform 0.2s !important;
+}
+.dropDown.dropDownOpen .dropDown__icon {
+  transform: rotate(-180deg) scale(0.8, 0.85);
+}
+.dropDown__menu {
+  padding: 0;
+  background: #fff;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  list-style-type: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.15);
+  z-index: 5;
+  overflow: hidden;
+  height: 11.25rem;
+  overflow: scroll;
+}
+.dropDown__menu::-webkit-scrollbar {
+  display: none;
+}
+.dropDown__menu li {
+  transition: background 0.2s;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  white-space: nowrap;
+}
+.dropDown__menu li:first-of-type {
+  padding-top: 0.75rem;
+}
+.dropDown__menu li:last-of-type {
+  padding-bottom: 0.75rem;
+}
+.dropDown__menu li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}

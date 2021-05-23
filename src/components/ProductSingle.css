@@ -1,0 +1,105 @@
+.productSingle {
+  padding: 5rem 3rem 3rem 3rem;
+}
+.productSingle__inner {
+  display: flex;
+}
+.productSingle__image {
+  flex: 0 0 calc(100% / 2.5);
+  padding-bottom: calc((100% / 2.5) * 1.33);
+  height: 0;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(26, 26, 44, 0.05);
+  background: #fff;
+}
+.productSingle img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: contain;
+  padding: 1rem;
+}
+.productSingle__details {
+  padding: 3rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.productSingle__details .productSingle__footer {
+  margin-top: auto;
+}
+.productSingle__features {
+  margin: 0;
+  padding: 0;
+  margin: 1rem 2rem;
+  list-style-type: none;
+}
+.productSingle__features li {
+  position: relative;
+  padding: 0;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.productSingle__features li::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f90;
+  border-radius: 5px;
+  box-shadow: inset -3px -3px 0 #1a1a2c;
+  z-index: 98;
+  top: 5px;
+  left: -20px;
+}
+.productSingle__price {
+  display: flex;
+  align-items: baseline;
+  margin: 0.25rem;
+}
+.productSingle__price + .buttons {
+  margin-top: 1.5rem;
+}
+.productSingle__price h4 {
+  font-weight: 900;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+.productSingle__price del {
+  color: #dc143c;
+}
+.productSingle__deliveryMessage {
+  color: #2e8b57;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.productSingle__deliveryMessage .MuiSvgIcon-root {
+  margin-right: 0.5rem;
+}
+.productSingle__suggested > .products {
+  margin: 0;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
+
+@media (max-width: 550px) {
+  .productSingle {
+    padding: 3rem 1.5rem;
+  }
+  .productSingle__inner {
+    flex-flow: column;
+  }
+  .productSingle__image {
+    flex: 0 0 100%;
+    padding-bottom: calc(100% * 1.33);
+  }
+  .productSingle__details {
+    padding: 3rem 0;
+  }
+  .productSingle__features {
+    margin: 1rem 0 1rem 2rem;
+  }
+}
