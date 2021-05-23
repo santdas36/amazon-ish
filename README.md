@@ -11,23 +11,11 @@
 
 ### ✨ [Demo](https://amazon-ish.vercel.app)
 
-## Install
-
-```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run build
-```
-
 ## Author
 
 👤 **Dash Santosh**
 
-- Website: https://dashsantosh.ga
+- Website: https://dashsantosh.me
 - Github: [@santdas36](https://github.com/santdas36)
 
 ## Show your support
