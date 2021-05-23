@@ -348,7 +348,7 @@ function Payment() {
               id="card"
               value="card"
               type="radio"
-              checked
+              checked={method == "card"}
               onChange={(e) => changeMethod(e)}
             />
             <label for="card">Add a Debit/Credit Card</label>
@@ -360,6 +360,7 @@ function Payment() {
               id="cod"
               value="cod"
               type="radio"
+              checked={method == "cod"}
               onChange={(e) => changeMethod(e)}
             />
             <label for="cod">Cash on Delivery</label>
