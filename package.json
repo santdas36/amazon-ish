@@ -9,6 +9,7 @@
     "@stripe/stripe-js": "^1.10.0",
     "axios": "^0.20.0",
     "firebase": "^7.18.0",
+    "firebase-admin": "^9.8.0",
     "framer-motion": "^4.1.17",
     "fuse.js": "^6.4.6",
     "react": "^16.13.1",
