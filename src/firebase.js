@@ -4,14 +4,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVZH5cfh099SnFNiQOY2TUW6-W9CiPInE",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "amzn-ish.firebaseapp.com",
   databaseURL: "https://amzn-ish.firebaseio.com",
   projectId: "amzn-ish",
   storageBucket: "amzn-ish.appspot.com",
   messagingSenderId: "1094671473025",
-  appId: "1:1094671473025:web:3c8c5ae7620bb0d9c03080",
-  measurementId: "G-G5EXQNMX4J",
+  appId: "1:1094671473025:web:7fc2bd27ecf03240c03080",
+  measurementId: "G-XRBSCHV4P2"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
