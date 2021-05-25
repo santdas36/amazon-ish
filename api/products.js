@@ -5,16 +5,15 @@ const firebase = !admin.apps.length ? admin.initializeApp({
 
 const db = firebase.firestore();
 
-export default async (request, response) => {
-	
+module.exports = async (request, response) => {	
 	if (request.method !== 'GET') {
 		return response.status(400).send('400 Bad Request');
 	}
 	
 	try {
-		db.collection("products").get().then((docs) => 
-		  response.status(200).json(docs);
-		);
+		db.collection("products").get().then((docs) => {
+		  return response.status(200).json(docs);
+		});
 	}
 	catch(e) {
 		console.log(e);
