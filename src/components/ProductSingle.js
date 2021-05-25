@@ -34,11 +34,9 @@ function ProductSingle() {
     if (loadingBar) {
       loadingBar.current.continuousStart();
     }
-    db.collection("products")
-      .doc(id)
-      .get()
+    axios.get(`/api/products?id=${id}`)
       .then((snapshot) => {
-        setProductDetails(snapshot.data());
+        setProductDetails(snapshot.data);
       })
       .then(() => {
         if (loadingBar) {
