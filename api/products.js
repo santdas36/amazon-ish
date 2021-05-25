@@ -10,11 +10,13 @@ module.exports = async (request, response) => {
 		return response.status(400).send('400 Bad Request');
 	}
 	
-		db.collection("products").get().then((docs) => {
-			console.log(docs)
-		    return response.status(200).json(docs);
-		}).catch((e) => {
-		    console.log(e);
-	  	  return response.status(500).send('Internal Error');
-		});
+	try {
+		const products = db.collection("products").get();
+		console.log(products.docs);
+		return response.status(200).json(products);
+	}
+	catch(e) {
+		console.log(e);
+		return response.status(500).send('Internal Error');
+		}
 }
