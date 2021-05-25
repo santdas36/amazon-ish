@@ -17,7 +17,6 @@ import { shuffleArray } from "../util";
 function ProductSingle() {
   const { id } = useParams();
   const location = useLocation();
-  console.log(location.state.product);
 
   const [productDetails, setProductDetails] = useState({});
   const [features, setFeatures] = useState([]);
@@ -93,7 +92,7 @@ function ProductSingle() {
     <div className="productSingle">
       <div className="productSingle__inner">
         <motion.div layoutId={id} className="productSingle__image">
-          <img src={productDetails?.imgUrl || location.state.product?.imgUrl} />
+          <img src={productDetails?.imgUrl} />
         </motion.div>
         <div className="productSingle__details">
           <TextTruncate
@@ -101,29 +100,26 @@ function ProductSingle() {
             element="h5"
             containerClassName="productSingle__name"
             truncateText="…"
-            text={productDetails?.name || location.state.product?.name}
+            text={productDetails?.name}
           />
           <ul className="productSingle__features">
-            {location.state.product?.feature.map((features) => (
+            {productDetails?.feature.map((features) => (
               <li>{features}</li>
             ))}
           </ul>
           <span className="productSingle__footer">
             <p className="productSingle__price">
-              <h4>${productDetails?.price || location.state.product?.price}</h4>{" "}
-              {(productDetails?.discount ||
-                location.state.product?.discount) && (
+              <h4>${productDetails?.price}</h4>{" "}
+              {(productDetails?.discount) && (
                 <small>
                   <del>
                     $
-                    {productDetails?.originalPrice ||
-                      location.state.product?.originalPrice}
+                    {productDetails?.originalPrice}
                   </del>
                 </small>
               )}
             </p>
-            {(productDetails?.price > 25 ||
-              location.state.product?.price > 25) && (
+            {(productDetails?.price > 25) && (
               <p className="productSingle__deliveryMessage">
                 <LabelImportantRoundedIcon
                   style={{
