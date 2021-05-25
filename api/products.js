@@ -12,8 +12,9 @@ module.exports = async (request, response) => {
 	
 	try {
 		const products = await db.collection("products").get();
-		console.log(products.docs);
-		return response.status(200).json(products);
+		const productsObj = products.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+		console.log(productsObj);
+		return response.status(200).json(productsObj);
 	}
 	catch(e) {
 		console.log(e);
