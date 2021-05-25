@@ -23,8 +23,13 @@ module.exports = async (request, response) => {
         .collection("products")
         .doc(request.query.id)
         .get();
-
-      return response.status(200).json(singleProduct.data());
+      if (singleProduct.exists) {
+        return response
+          .status(200)
+          .json({ id: request.query.id, ...singleProduct.data() });
+      } else {
+        return response.status(400).send("Product doesn't exist.");
+      }
     } catch (e) {
       console.log(e);
 
