@@ -10,9 +10,9 @@ function Main() {
       <div className="products">
         {products?.map((product) =>
           category === "all" ? (
-            <Product id={product.id} item={product.data()} />
-          ) : category === product.data().category ? (
-            <Product id={product.id} item={product.data()} />
+            <Product id={product.id} item={product} />
+          ) : category === product.category ? (
+            <Product id={product.id} item={product} />
           ) : null
         )}
       </div>

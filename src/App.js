@@ -22,6 +22,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { shuffleArray } from "./util";
 import Fuse from "fuse.js";
+import axios from "axios";
 
 const promise = loadStripe(
   "pk_test_51HdsPRE4K4vYNE8J6n2SZ7Q68Z8mqdHJROiHxnm7U5yeTk8oBed7LF3IqSZGSlr1vso40SYgMc3NWeYCvuhKfv6H00pu5ZkJi3"
@@ -80,18 +81,14 @@ function App() {
       }
     });
 
-    db.collection("products")
-      .get()
+    axios
+      .get("/api/products")
       .then((snapshot) => {
         dispatch({
           type: "SET_PRODUCTS",
-          products: shuffleArray(snapshot.docs),
+          products: shuffleArray(snapshot.data),
         });
-        const productsData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        const fuse = new Fuse(productsData, { keys: ["name", "category"] });
+        const fuse = new Fuse(snapshot.data, { keys: ["name", "category"] });
         dispatch({
           type: "SET_FUSE",
           fuse: fuse,

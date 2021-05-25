@@ -28,6 +28,10 @@ function ProductSingle() {
   const [{ cart, bookmarks, products, loadingBar }, dispatch] = useStateValue();
 
   useEffect(() => {
+  	if(location.state && location.state.product) {
+	setProductDetails(location.state.product)
+	return;
+}
     if (loadingBar) {
       loadingBar.current.continuousStart();
     }
@@ -177,7 +181,7 @@ function ProductSingle() {
             ?.slice(0, 3)
             .map((product) =>
               product.id != id ? (
-                <Product id={product.id} item={product.data()} />
+                <Product id={product.id} item={product} />
               ) : null
             )}
         </div>
