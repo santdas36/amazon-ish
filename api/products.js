@@ -11,7 +11,7 @@ module.exports = async (request, response) => {
 	}
 	
 	try {
-		const products = db.collection("products").get();
+		const products = await db.collection("products").get();
 		console.log(products.docs);
 		return response.status(200).json(products);
 	}
