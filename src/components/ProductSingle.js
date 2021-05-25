@@ -13,6 +13,7 @@ import { useStateValue } from "../StateProvider";
 import db from "../firebase";
 import { motion } from "framer-motion";
 import { shuffleArray } from "../util";
+import axios from "axios";
 
 function ProductSingle() {
   const { id } = useParams();
