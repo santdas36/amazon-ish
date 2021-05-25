@@ -12,7 +12,7 @@ export default async (request, response) => {
 	}
 	
 	try {
-		const products = db.collection("products").get();
+		const products = await db.collection("products").get();
 		return response.status(200).json(products);
 	}
 	catch(e) {
