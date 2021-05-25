@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const firebase = !admin.apps.length ? admin.initializeApp({
-	credential: admin.credential.cert(JSON.parse(new Buffer(process.env.GOOGLE_APPLICATION_CREDENTIALS, 'base64').toString('utf-8'))),
+	credential: admin.credential.cert(JSON.parse(new Buffer(process.env.GCLOUD_CREDENTIALS, 'base64').toString('utf-8'))),
 }) : admin.app();
 
 const db = firebase.firestore();
