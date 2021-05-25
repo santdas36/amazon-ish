@@ -18,7 +18,7 @@ function ProductSingle() {
   const { id } = useParams();
   const location = useLocation();
 
-  const [productDetails, setProductDetails] = useState({});
+  const [productDetails, setProductDetails] = useState(null);
   const [features, setFeatures] = useState([]);
 
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -69,7 +69,9 @@ function ProductSingle() {
   };
 
   useEffect(() => {
-    setSuggestions(shuffleArray(products));
+  	if (products) {
+        setSuggestions(shuffleArray(products));
+    }
   }, [products]);
 
   useEffect(() => {
@@ -103,7 +105,7 @@ function ProductSingle() {
             text={productDetails?.name}
           />
           <ul className="productSingle__features">
-            {productDetails?.feature.map((features) => (
+            {productDetails?.feature?.map((features) => (
               <li>{features}</li>
             ))}
           </ul>
