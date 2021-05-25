@@ -201,8 +201,8 @@ function Payment() {
     setProcessing(true);
     loadingBar.current.continuousStart();
     if (!stripe || !stripeElements || !userDetails) {
-      return;
       loadingBar.current.complete();
+      return;
     }
     if (method === "card") {
       stripeElements.getElement(CardElement).update({ disabled: true });
