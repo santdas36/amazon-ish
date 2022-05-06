@@ -47,8 +47,8 @@ function Payment() {
     setProcessing(true);
     loadingBar.current.continuousStart();
     if (!stripe || !userDetails) {
-      return;
       loadingBar.current.complete();
+      return;
     }
     const totAmount = await parseFloat(getCartTotal(cart));
     axios

@@ -1,12 +1,9 @@
 const admin = require("firebase-admin");
+const serviceAccount = require("../service-account.json");
 
 const firebase = !admin.apps.length
   ? admin.initializeApp({
-      credential: admin.credential.cert(
-        JSON.parse(
-          new Buffer(process.env.GCLOUD_CREDENTIALS, "base64").toString("utf-8")
-        )
-      ),
+      credential: admin.credential.cert(serviceAccount),
     })
   : admin.app();
 
@@ -35,9 +32,7 @@ module.exports = async (request, response) => {
 
       return response.status(500).send("Internal Error");
     }
-  }
-  
-  else {
+  } else {
     try {
       const products = await db.collection("products").get();
 

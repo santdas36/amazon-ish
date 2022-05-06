@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     tax_rates: ["txr_1ItzgWE4K4vYNE8J6tVoJrYj"],
     price_data: {
       currency: "inr",
-      unit_amount: parseInt(item.price * 7300),
+      unit_amount: parseInt(item.price),
       product_data: {
         name: item.name,
         images: [item.imgUrl],
@@ -22,32 +22,29 @@ module.exports = async (req, res) => {
 
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      shipping_rates: shipping ? ["shr_1IuAEBE4K4vYNE8JCuVCqrkc"] : [],
-      payment_intent_data: {
-        shipping: {
-          address: {
-            country: userDetails.country,
-            postal_code: userDetails.postal_code,
-            state: userDetails.state,
-            line1: userDetails.address,
+      line_items: [
+        {
+          description: "test",
+          quantity: 1,
+          price_data: {
+            currency: "usd",
+            unit_amount: parseInt(10000 + 10000 * 0.129),
+            product_data: { name: "test" },
           },
-          name: userDetails.name,
-          phone: userDetails.phone,
+        },
+      ],
+      mode: "payment",
+      success_url: "https://example.com/success",
+      cancel_url: "https://example.com/failure",
+      payment_intent_data: {
+        // application_fee_amount: 123,
+        transfer_data: {
+          amount: 10000,
+          destination: "acct_1Ke0JzRQ5OjAh5vv",
         },
       },
-      line_items: transformedCart,
-      mode: "payment",
-      success_url:
-        "https://amazon-ish.vercel.app/payment?success={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://amazon-ish.vercel.app/payment",
-      customer_email: userDetails.email,
-      metadata: {
-        uid: uid,
-        orderId: orderId,
-      },
     });
-
+    console.log(session.url);
     return res.status(200).json(session);
   } catch (e) {
     console.log(e);
