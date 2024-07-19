@@ -18,7 +18,7 @@
   display: none;
 }
 .sidebar__icon {
-  width: 2rem;
+  width: 2.5rem;
   height: auto;
 }
 .sidebar__menu {
@@ -90,7 +90,7 @@
   .sidebar__icon {
     transform: translateX(80px);
     transition: all 0.2s;
-    width: 2.5rem;
+    width: 3rem;
     padding: 0.5rem;
     border-radius: 99px;
     box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.1);

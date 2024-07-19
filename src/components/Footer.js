@@ -1,7 +1,7 @@
 import React from "react";
-import "./Footer.css";
-import amazonLogo from "../assets/logo.svg";
+import amazonLogo from "../assets/logo.png";
 import DropDown from "./DropDown";
+import "./Footer.css";
 
 const languages = [
   "English",

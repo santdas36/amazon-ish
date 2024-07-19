@@ -1,12 +1,12 @@
-import React, { useState, useRef } from "react";
-import "./Header.css";
-import amazonLogo from "../assets/logo.svg";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-import DropDown from "./DropDown";
-import "./SearchResults.css";
-import { useHistory, useLocation } from "react-router-dom";
-import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import amazonLogo from "../assets/logo.png";
+import { useStateValue } from "../StateProvider";
+import DropDown from "./DropDown";
+import "./Header.css";
+import "./SearchResults.css";
 
 const languages = [
   "English",

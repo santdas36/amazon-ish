@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
-import amazonIcon from "../assets/icon.svg";
+import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
+import BookmarksRoundedIcon from "@material-ui/icons/BookmarksRounded";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
-import BookmarksRoundedIcon from "@material-ui/icons/BookmarksRounded";
 import WatchLaterRoundedIcon from "@material-ui/icons/WatchLaterRounded";
-import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
+import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import defaultImage from "../assets/default.jpg";
 import ReactTooltip from "react-tooltip";
+import defaultImage from "../assets/default.jpg";
+import amazonIcon from "../assets/icon.png";
 import { useStateValue } from "../StateProvider";
+import "./Sidebar.css";
 
 const iconStyle = (fontsize) => {
   return {
